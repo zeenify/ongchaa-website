@@ -1,9 +1,9 @@
 FROM php:8.2-apache
 
-# PostgreSQL driver for Joomla (Neon Postgres)
+# PostgreSQL driver + opcache for Joomla (Neon Postgres)
 RUN apt-get update \
  && apt-get install -y --no-install-recommends libpq-dev \
- && docker-php-ext-install pdo_pgsql \
+ && docker-php-ext-install pdo_pgsql opcache \
  && rm -rf /var/lib/apt/lists/* \
  && a2enmod rewrite headers
 
@@ -12,11 +12,13 @@ RUN printf 'Listen 0.0.0.0:${PORT}\n' > /etc/apache2/conf-available/zz-render-po
  && a2enconf zz-render-port
 ENV PORT=80
 
+# opcache tuned for an immutable image
+RUN printf 'opcache.enable=1\nopcache.memory_consumption=128\nopcache.interned_strings_buffer=16\nopcache.max_accelerated_files=10000\nopcache.validate_timestamps=0\n' > /usr/local/etc/php/conf.d/zz-opcache.ini
+
 # Site files (baked into the image so they survive restarts)
 COPY site/ /var/www/html/
 
-# Guarantee the runtime directories Joomla must write to (cache, tmp, logs)
-# even if they are git-ignored or absent from the repository
+# Guarantee the runtime directories Joomla must write to
 RUN mkdir -p /var/www/html/cache \
              /var/www/html/tmp \
              /var/www/html/administrator/logs \

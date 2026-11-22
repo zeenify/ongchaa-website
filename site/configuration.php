@@ -40,7 +40,7 @@ class JConfig {
 	public $smtphost = 'localhost';
 	public $smtpsecure = 'none';
 	public $smtpport = '25';
-	public $caching = 0;
+	public $caching = 1;
 	public $cachetime = '15';
 	public $cache_platformprefix = false;
 	public $cachetimeout = '0';
@@ -97,7 +97,7 @@ class JConfig {
 	public $mailonline = false;
 	public $massmailnamewrap = 0;
 	public $gzip = false;
-	public $error_reporting = 'maximum';
+	public $error_reporting = 'default';
 	public $helpurl = 'https://help.joomla.org/proxy/index.php?keyref=help{major}{minor}:';
 	public $xmlrpc_server = false;
 	public $log_path = OCA_BASE_PATH . '/administrator/logs';
