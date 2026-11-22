@@ -209,9 +209,9 @@ class Template
         $db = Factory::getContainer()->get(DatabaseInterface::class);
         $query = $db
             ->getQuery(true)
-            ->select('`home`')
+            ->select('home')
             ->from('#__template_styles')
-            ->where('`id`=' . $id);
+            ->where('id=' . $id);
         $db->setQuery($query);
         $result = $db->loadResult();
         if ($result == 1)  {
@@ -320,9 +320,9 @@ class Template
         $db = Factory::getContainer()->get(DatabaseInterface::class);
         $query = $db
             ->getQuery(true)
-            ->select('`template`,`id`,`title`,`params`,`home`')
+            ->select('template, id, title, params, home')
             ->from('#__template_styles')
-            ->where('`id`=' . $id);
+            ->where('id=' . $id);
         $db->setQuery($query);
         $result = $db->loadObject();
 
@@ -338,9 +338,9 @@ class Template
         $db = Factory::getContainer()->get(DatabaseInterface::class);
         $query = $db
             ->getQuery(true)
-            ->select('`template`,`id`,`title`,`params`,`home`')
+            ->select('template, id, title, params, home')
             ->from('#__template_styles')
-            ->where('`home`= 1 AND `client_id` = 0');
+            ->where('home = ' . $db->quote('1') . ' AND client_id = 0');
         $db->setQuery($query);
         $result = $db->loadObject();
 

@@ -632,7 +632,7 @@ class Article
     public static function getArticleRating($id)
     {
         $db = Factory::getContainer()->get(DatabaseInterface::class);
-        $query = "SELECT * FROM `#__content_rating` WHERE `content_id`='$id'";
+        $query = "SELECT * FROM #__content_rating WHERE content_id='$id'";
         $db->setQuery($query);
         $result = $db->loadObject();
         if (empty($result)) {
@@ -693,7 +693,7 @@ class Article
         $params = new Registry();
         if (Factory::getApplication()->input->get('view', '') == 'article' && !empty($this->article->catid)) {
             $db = Factory::getContainer()->get(DatabaseInterface::class);
-            $query = "SELECT `params` FROM `#__categories` WHERE `id`=" . $this->article->catid;
+            $query = "SELECT params FROM #__categories WHERE id=" . $this->article->catid;
             $db->setQuery($query);
             $result = $db->loadObject();
             if (!empty($result) && !empty($result->params)) {
