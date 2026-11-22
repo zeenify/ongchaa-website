@@ -6,7 +6,10 @@ use Joomla\CMS\Uri\Uri;
 $app = Factory::getApplication();
 $base = Uri::root(true) . '/templates/ongchaa';
 $code = $this->error->getCode() ?? 500;
-	@error_log("[ongchaa-fatal] code=" . $code . " msg=" . $this->error->getMessage());
+	@error_log("[ongchaa-fatal] code=" . $code . " msg=" . $this->error->getMessage() . "
+TRACE:
+" . $this->error->getTraceAsString());
+		$trace = "<pre style=\"text-align:left;font-size:10px;white-space:pre-wrap;\">" . htmlspecialchars($this->error->getTraceAsString()) . "</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
@@ -22,6 +25,7 @@ $code = $this->error->getCode() ?? 500;
 		<div class="container text-center">
 			<h1 style="font-size:4rem;color:var(--oca-pink);"><?php echo $code; ?></h1>
 			<p style="color:#900;font-family:monospace;"><?php echo htmlspecialchars($this->error->getMessage()); ?></p>
+			<?= isset($trace) ? $trace : "" ?>
 			<p style="font-size:1.2rem;">Oops! This page ran out of milk tea. <a href="<?php echo Uri::root(true); ?>/" style="color:var(--oca-green);font-weight:600;">Back to the shop</a></p>
 		</div>
 	</main>

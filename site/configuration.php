@@ -97,7 +97,7 @@ class JConfig {
 	public $mailonline = false;
 	public $massmailnamewrap = 0;
 	public $gzip = false;
-	public $error_reporting = 'default';
+	public $error_reporting = 'maximum';
 	public $helpurl = 'https://help.joomla.org/proxy/index.php?keyref=help{major}{minor}:';
 	public $xmlrpc_server = false;
 	public $log_path = OCA_BASE_PATH . '/administrator/logs';
