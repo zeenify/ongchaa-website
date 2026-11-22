@@ -6,6 +6,7 @@ use Joomla\CMS\Uri\Uri;
 $app = Factory::getApplication();
 $base = Uri::root(true) . '/templates/ongchaa';
 $code = $this->error->getCode() ?? 500;
+	@error_log("[ongchaa-fatal] code=" . $code . " msg=" . $this->error->getMessage());
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">

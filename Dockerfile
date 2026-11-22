@@ -7,6 +7,11 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/* \
  && a2enmod rewrite headers
 
+# Bind Apache to Render's expected port (PORT env, default 80 locally)
+RUN printf 'Listen 0.0.0.0:${PORT}\n' > /etc/apache2/conf-available/zz-render-port.conf \
+ && a2enconf zz-render-port
+ENV PORT=80
+
 # Site files (baked into the image so they survive restarts)
 COPY site/ /var/www/html/
 
