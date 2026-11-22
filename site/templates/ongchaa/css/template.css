@@ -195,7 +195,7 @@ h1, h2, h3, h4, h5, .oca-brand-name {
 	transition: transform .2s, box-shadow .2s;
 }
 .oca-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(236,107,160,.18); }
-.oca-card img.oca-card-img { width: 100%; height: 210px; object-fit: cover; }
+.oca-card img.oca-card-img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
 .oca-card-body { padding: 1.1rem 1.2rem 1.3rem; }
 .oca-card-body h3 { font-size: 1.15rem; margin-bottom: .4rem; }
 .oca-price-tag {
@@ -343,4 +343,4 @@ h1, h2, h3, h4, h5, .oca-brand-name {
 .oca-messages .alert { border-radius: 12px; }
 
 /* ---------- Poster-fit images (promo cards) ---------- */
-.oca-card img.oca-poster { object-fit: contain !important; background: #fff; height: 280px; }
+.oca-card img.oca-poster { object-fit: contain !important; background: #fff; aspect-ratio: 1 / 1; }
