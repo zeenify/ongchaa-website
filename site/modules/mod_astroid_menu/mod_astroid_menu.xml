@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>Astroid Menu Module</name>
+	<author>Astroid Framework</author>
+	<creationDate>July 2026</creationDate>
+	<copyright>(C) 2026 Astroid Framework</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>sonlv@templaza.com</authorEmail>
+	<authorUrl>astroidframe.work</authorUrl>
+	<version>3.5.3</version>
+	<description>MOD_ASTROID_MENU_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_astroid_menu">mod_astroid_menu.php</filename>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/mod_astroid_menu.ini</language>
+		<language tag="en-GB">language/en-GB/mod_astroid_menu.sys.ini</language>
+	</languages>
+	<help key="Site_Modules:_Menu" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldprefix="Joomla\Component\Menus\Administrator\Field">
+				<field
+					name="menutype"
+					type="menu"
+					label="MOD_ASTROID_MENU_FIELD_MENUTYPE_LABEL"
+					clientid="0"
+				/>
+
+				<field
+					name="base"
+					type="modal_menu"
+					label="MOD_ASTROID_MENU_FIELD_ACTIVE_LABEL"
+					select="true"
+					new="true"
+					edit="true"
+					clear="true"
+					filter="integer"
+					>
+					<option value="">JCURRENT</option>
+				</field>
+
+				<field
+					name="startLevel"
+					type="list"
+					label="MOD_ASTROID_MENU_FIELD_STARTLEVEL_LABEL"
+					default="1"
+					filter="integer"
+					validate="options"
+					>
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+				</field>
+
+				<field
+					name="endLevel"
+					type="list"
+					label="MOD_ASTROID_MENU_FIELD_ENDLEVEL_LABEL"
+					default="0"
+					filter="integer"
+					validate="options"
+					>
+					<option value="0">JALL</option>
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+				</field>
+
+				<field
+					name="showAllChildren"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_ASTROID_MENU_FIELD_ALLCHILDREN_LABEL"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field name="menu_mode" type="list" label="TPL_ASTROID_MENU_MODE_LABEL" default="site">
+					<option value="site">TPL_ASTROID_MENU_SITE_MODE_LABEL</option>
+					<option value="sidebar">TPL_ASTROID_MENU_SIDEBAR_MODE_LABEL</option>
+					<option value="mobile">TPL_ASTROID_MENU_MOBILE_MODE_LABEL</option>
+				</field>
+				<field
+						name="logo_between"
+						type="radio"
+						layout="joomla.form.field.radio.switcher"
+						label="TPL_ASTROID_MENU_LOGO_BETWEEN_LABEL"
+						description="TPL_ASTROID_MENU_LOGO_BETWEEN_DESC"
+						default="0"
+						filter="integer"
+						showon="menu_mode:site"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field
+						name="dropdown_arrow"
+						type="radio"
+						layout="joomla.form.field.radio.switcher"
+						label="TPL_ASTROID_MENU_OPTIONS_SELECT_ARROW_LABEL"
+						default="1"
+						filter="integer"
+						showon="menu_mode:site"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field name="dropdown_animation_speed" type="range" default="300" label="TPL_ASTROID_HEADER_ANIMATION_SPEED_LABEL" description="" min="100" max="4000" step="1" showon="menu_mode:site" />
+				<field name="dropdown_animation_type" type="list" label="TPL_ASTROID_HEADER_MENU_ANIMATION" default="slide" showon="menu_mode:site">
+					<option value="none">ASTROID_NONE</option>
+					<option value="fade">TPL_ASTROID_HEADER_MENU_ANIMATION_OPTION_FADE</option>
+					<option value="slide">TPL_ASTROID_HEADER_MENU_ANIMATION_OPTION_SILDE</option>
+					<option value="slide-scale">TPL_ASTROID_HEADER_MENU_ANIMATION_OPTION_SLIDE_SCALE</option>
+					<option value="zoom">TPL_ASTROID_HEADER_MENU_ANIMATION_OPTION_ZOOM</option>
+					<option value="drop">TPL_ASTROID_HEADER_MENU_ANIMATION_OPTION_DROP</option>
+					<option value="flip">TPL_ASTROID_HEADER_MENU_ANIMATION_OPTION_FLIP</option>
+					<option value="scaleY">TPL_ASTROID_HEADER_MENU_ANIMATION_OPTION_SCALEY</option>
+					<option value="blur-in">TPL_ASTROID_HEADER_MENU_ANIMATION_OPTION_BLURIN</option>
+				</field>
+				<field name="dropdown_animation_ease" type="list" label="TPL_ASTROID_HEADER_ANIMATION_EASE_LABEL" default="linear" showon="menu_mode:site">
+					<!-- GSAP 3 easing options -->
+					<option value="none">none</option>
+					<option value="linear">linear</option>
+
+					<!-- Power eases -->
+					<option value="power1.in">power1.in</option>
+					<option value="power1.out">power1.out</option>
+					<option value="power1.inOut">power1.inOut</option>
+					<option value="power2.in">power2.in</option>
+					<option value="power2.out">power2.out</option>
+					<option value="power2.inOut">power2.inOut</option>
+					<option value="power3.in">power3.in</option>
+					<option value="power3.out">power3.out</option>
+					<option value="power3.inOut">power3.inOut</option>
+					<option value="power4.in">power4.in</option>
+					<option value="power4.out">power4.out</option>
+					<option value="power4.inOut">power4.inOut</option>
+
+					<!-- Classic eases -->
+					<option value="back.in">back.in</option>
+					<option value="back.out">back.out</option>
+					<option value="back.inOut">back.inOut</option>
+					<option value="elastic.in">elastic.in</option>
+					<option value="elastic.out">elastic.out</option>
+					<option value="elastic.inOut">elastic.inOut</option>
+					<option value="bounce.in">bounce.in</option>
+					<option value="bounce.out">bounce.out</option>
+					<option value="bounce.inOut">bounce.inOut</option>
+
+					<!-- Trigonometric / expo / circ -->
+					<option value="sine.in">sine.in</option>
+					<option value="sine.out">sine.out</option>
+					<option value="sine.inOut">sine.inOut</option>
+					<option value="circ.in">circ.in</option>
+					<option value="circ.out">circ.out</option>
+					<option value="circ.inOut">circ.inOut</option>
+					<option value="expo.in">expo.in</option>
+					<option value="expo.out">expo.out</option>
+					<option value="expo.inOut">expo.inOut</option>
+				</field>
+				<field showon="menu_mode:site"
+				       name="enable_backdrop" type="radio"
+				       layout="joomla.form.field.radio.switcher"
+				       filter="integer"
+				       default="0" label="TPL_ASTROID_HEADER_ANIMATION_ENABLE_BACKDROP_LABEL"
+					   description="TPL_ASTROID_HEADER_ANIMATION_ENABLE_BACKDROP_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field showon="menu_mode:site"
+				       name="enable_stagger_effect" type="radio"
+				       layout="joomla.form.field.radio.switcher"
+				       filter="integer"
+				       default="0" label="TPL_ASTROID_HEADER_ANIMATION_ENABLE_STAGGER_LABEL"
+					   description="TPL_ASTROID_HEADER_ANIMATION_ENABLE_STAGGER_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field showon="menu_mode:site"
+				       name="enable_header_spacing" type="radio"
+				       layout="joomla.form.field.radio.switcher"
+				       filter="integer"
+				       default="1" label="TPL_ASTROID_HEADER_ANIMATION_ENABLE_HEADER_SPACING_LABEL"
+					   description="TPL_ASTROID_HEADER_ANIMATION_ENABLE_HEADER_SPACING_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="dropdown_trigger" type="list" label="TPL_ASTROID_MENU_OPTIONS_SELECT_ACTION_LABEL" description="TPL_ASTROID_MENU_OPTIONS_SELECT_ACTION_DESC" default="hover" showon="menu_mode:site">
+					<option value="hover">JGLOBAL_HOVER</option>
+					<option value="click">JGLOBAL_CLICK</option>
+				</field>
+				<field name="menu_breakpoint" type="list" label="MOD_ASTROID_HEADER_BREAKPOINT_LABEL" description="MOD_ASTROID_HEADER_BREAKPOINT_DESC" default="lg" showon="menu_mode:site">
+					<option value="sm">MOD_ASTROID_SMALL</option>
+					<option value="md">MOD_ASTROID_MEDIUM</option>
+					<option value="lg">MOD_ASTROID_LARGE</option>
+					<option value="xl">MOD_ASTROID_EXTRA_LARGE</option>
+					<option value="xxl">MOD_ASTROID_EXTRA_EXTRA_LARGE</option>
+				</field>
+				<field name="mobilemenu_visibility" type="list" label="TPL_ASTROID_VISIBILITY_LABEL" description="MOD_ASTROID_HEADER_BREAKPOINT_DESC" default="lg" showon="menu_mode:mobile">
+					<option value="sm">ASTROID_BREAKPOINT_SM</option>
+					<option value="md">ASTROID_BREAKPOINT_MD</option>
+					<option value="lg">ASTROID_BREAKPOINT_LG</option>
+					<option value="xl">ASTROID_BREAKPOINT_XL</option>
+					<option value="xxl">ASTROID_BREAKPOINT_XXL</option>
+					<option value="always">TPL_ASTROID_TOGGLE_VISIBILITY_OPTIONS_ALWAYS</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="tag_id"
+					type="text"
+					label="MOD_ASTROID_MENU_FIELD_TAG_ID_LABEL"
+				/>
+
+				<field
+					name="class_sfx"
+					type="text"
+					label="MOD_ASTROID_MENU_FIELD_CLASS_LABEL"
+					validate="CssIdentifier"
+				/>
+
+				<field
+					name="window_open"
+					type="text"
+					label="MOD_ASTROID_MENU_FIELD_TARGET_LABEL"
+					description="MOD_ASTROID_MENU_FIELD_TARGET_DESC"
+				/>
+
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					default="_:default"
+					validate="moduleLayout"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					default="1"
+					filter="integer"
+					validate="options"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					default="900"
+					filter="integer"
+				/>
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid"
+					>
+					<option value="itemid"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Astroid Framework">https://raw.githubusercontent.com/templaza/astroid-framework/refs/heads/updates/astroid_framework.xml</server>
+	</updateservers>
+</extension>

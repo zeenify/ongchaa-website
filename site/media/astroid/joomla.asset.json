@@ -1,0 +1,168 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "astroid",
+  "version": "3.5.2",
+  "description": "Astroid Framework Assets",
+  "license": "GPL-3.0-or-later",
+  "assets": [
+    {
+      "name": "astroid.gsap",
+      "type": "script",
+      "uri": "media/astroid/assets/vendor/gsap/gsap.min.js"
+    },
+    {
+      "name": "astroid.megamenu",
+      "type": "script",
+      "dependencies": [
+        "astroid.gsap"
+      ],
+      "uri": "astroid/megamenu.min.js"
+    },
+    {
+      "name": "astroid.mobilemenu",
+      "type": "script",
+      "uri": "astroid/mobilemenu.min.js"
+    },
+    {
+      "name": "astroid.script",
+      "type": "script",
+      "uri": "astroid/script.min.js"
+    },
+    {
+      "name": "astroid.uikit",
+      "type": "script",
+      "uri": "media/astroid/assets/vendor/uikit/js/uikit.min.js"
+    },
+    {
+      "name": "astroid.uikit-icons",
+      "type": "script",
+      "uri": "media/astroid/assets/vendor/uikit/js/uikit-icons.min.js"
+    },
+    {
+      "name": "astroid.uikit",
+      "type": "style",
+      "uri": "media/astroid/assets/vendor/uikit/css/uikit.min.css"
+    },
+    {
+      "name": "astroid.uikit.rtl",
+      "type": "style",
+      "uri": "media/astroid/assets/vendor/uikit/css/uikit.rtl.min.css"
+    },
+    {
+      "name": "astroid.debug",
+      "type": "script",
+      "dependencies": [
+        "jquery"
+      ],
+      "uri": "astroid/debug.min.js"
+    },
+    {
+      "name": "astroid.colortransform",
+      "type": "script",
+      "uri": "astroid/colortransform.min.js"
+    },
+    {
+      "name": "astroid.animation.css",
+      "type": "style",
+      "uri": "astroid/animate.min.css"
+    },
+    {
+      "name": "astroid.animation.js",
+      "type": "script",
+      "uri": "astroid/animate.min.js"
+    },
+    {
+      "name": "astroid.swiper.css",
+      "type": "style",
+      "uri": "media/astroid/assets/vendor/swiper/swiper-bundle.min.css"
+    },
+    {
+      "name": "astroid.swiper.js",
+      "type": "script",
+      "uri": "media/astroid/assets/vendor/swiper/swiper-bundle.min.js"
+    },
+    {
+      "name": "astroid.slick.css",
+      "type": "style",
+      "uri": "astroid/slick.min.css"
+    },
+    {
+      "name": "astroid.slick.js",
+      "type": "script",
+      "dependencies": [
+        "jquery"
+      ],
+      "uri": "astroid/slick.min.js"
+    },
+    {
+      "name": "astroid.masonry",
+      "type": "script",
+      "uri": "astroid/masonry.pkgd.min.js"
+    },
+    {
+      "name": "astroid.imagesloaded",
+      "type": "script",
+      "uri": "astroid/imagesloaded.pkgd.min.js"
+    },
+    {
+      "name": "astroid.videobg",
+      "type": "script",
+      "dependencies": [
+        "astroid.gsap"
+      ],
+      "uri": "astroid/videobg.min.js"
+    },
+    {
+      "name": "astroid.parallax",
+      "type": "script",
+      "dependencies": [
+        "astroid.gsap"
+      ],
+      "uri": "astroid/parallax.min.js"
+    },
+    {
+      "name": "astroid.cookieconsent",
+      "type": "script",
+      "dependencies": [
+        "astroid.gsap"
+      ],
+      "uri": "astroid/cookieconsent.min.js"
+    },
+    {
+      "name": "astroid.lenis",
+      "type": "style",
+      "uri": "media/astroid/assets/vendor/lenis/lenis.css"
+    },
+    {
+      "name": "astroid.lenis",
+      "type": "script",
+      "uri": "media/astroid/assets/vendor/lenis/lenis.min.js"
+    },
+    {
+      "name": "astroid.smoothscroll",
+      "type": "script",
+      "uri": "astroid/smooth-scroll.polyfills.min.js"
+    },
+    {
+      "name": "astroid.scroll.effects",
+      "type": "script",
+      "dependencies": [
+        "astroid.gsap"
+      ],
+      "uri": "astroid/AstroidScrollEffects.min.js"
+    },
+    {
+      "name": "astroid.animation.counter",
+      "type": "script",
+      "dependencies": [
+        "astroid.gsap"
+      ],
+      "uri": "astroid/animate-counter.min.js"
+    },
+    {
+      "name": "astroid.countdown",
+      "type": "script",
+      "uri": "astroid/countdown.min.js"
+    }
+  ]
+}

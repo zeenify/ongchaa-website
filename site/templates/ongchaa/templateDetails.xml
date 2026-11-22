@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="template" client="site">
+	<name>ongchaa</name>
+	<title>Ong-cha-A Brand Theme</title>
+	<author>IT WS 06 Case Study Group</author>
+	<creationDate>2026-11</creationDate>
+	<copyright>IT WS 06 Case Study</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<version>1.0.0</version>
+	<description>Custom brand template for Ong-cha-A Cafe - General Tinio. Pink and leaf-green palette based on the official Ong-cha-A logo.</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>error.php</filename>
+		<filename>offline.php</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>images</folder>
+	</files>
+	<positions>
+		<position>topnav</position>
+		<position>banner</position>
+		<position>promo</position>
+		<position>footer-info</position>
+		<position>debug</position>
+	</positions>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field name="brandPrimary" type="color" default="#EC6BA0" label="Brand Pink" />
+				<field name="brandGreen" type="color" default="#4C9B4C" label="Brand Green" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

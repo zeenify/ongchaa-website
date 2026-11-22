@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="plugin" method="upgrade" group="system">
+   <name>System - Astroid Plugin</name>
+   <author>Astroid Framework Team</author>
+   <creationDate>September 2026</creationDate>
+   <version>3.5.3</version>
+   <url>https://www.astroidframe.work</url>
+   <copyright>Copyright (C) 2026 TemPlaza, Inc. All rights reserved.</copyright>
+   <license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+   <authorEmail>info@templaza.com</authorEmail>
+   <authorUrl>https://www.templaza.com</authorUrl>
+   <description>Astroid Framework core plugin where Astroid libraries are called. You must enable this plugin if you want to use Astroid Framework.</description>
+   <namespace path="src">Joomla\Plugin\System\Astroid</namespace>
+   <files>
+      <folder plugin="astroid">services</folder>
+      <folder>src</folder>
+   </files>
+   <config>
+      <fields name="params">
+         <fieldset name="basic">
+            <field name="astroid_load_fontawesome" type="radio" default="local" label="ASTROID_LOAD_FONTAWESOME" description="ASTROID_LOAD_FONTAWESOME_DESC" class="btn-group btn-group-yesno">
+               <option value="0">OFF</option>
+               <option value="cdn">CDN</option>
+               <option value="local">Local</option>
+            </field>
+            <field name="astroid_shortcut_enable" type="radio" default="1" label="ASTROID_ENABLE_SHORTCUT_LABEL" description="ASTROID_ENABLE_SHORTCUT_DESC" class="btn-group btn-group-yesno">
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field name="astroid_enable_widgets" type="radio" default="1" label="TPL_ASTROID_BASIC_ENABLE_WIDGETS_LABEL" description="TPL_ASTROID_BASIC_ENABLE_WIDGETS_DESC" class="btn-group btn-group-yesno">
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field name="astroid_remove_generator" type="radio" default="0" label="TPL_ASTROID_BASIC_REMOVE_GENERATOR_LABEL" description="TPL_ASTROID_BASIC_REMOVE_GENERATOR_DESC" class="btn-group btn-group-yesno">
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field name="astroid_legacy" type="radio" default="0" label="ASTROID_SAFEMODE" description="ASTROID_SAFE_MODE_DESC" class="btn-group btn-group-yesno">
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field name="hide_preview_font" type="radio" default="0" label="TPL_ASTROID_HIDE_FONT_PREVIEW" class="btn-group btn-group-yesno">
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field name="astroid_debug" type="radio" default="0" label="Debug" description="" class="btn-group btn-group-yesno">
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+         </fieldset>
+         <fieldset name="astroid_api">
+            <field name="gmap_api" type="text" default="" label="ASTROID_WIDGET_GMAP_API" description="ASTROID_WIDGET_GMAP_API_DESC"/>
+            <field name="tinymce_license" type="text" default="" label="ASTROID_WIDGET_TINY_LICENSE" description="ASTROID_WIDGET_TINY_LICENSE"/>
+         </fieldset>
+         <fieldset name="astroid-tabs-visibility">
+            <field name="tabs_visibility" type="radio" default="1" label="ASTROID_ARTICLE_TABS_VISIBILTY" description="" class="btn-group btn-group-yesno">
+               <option value="1">ASTROID_VISIBLE</option>
+               <option value="0">ASTROID_HIDDEN</option>
+            </field>
+            <field
+                    showon="tabs_visibility:1"
+                    name="article_tabs_visibility"
+                    type="list"
+                    default="[&quot;article&quot;,&quot;blog&quot;,&quot;article_layout&quot;,&quot;opengraph&quot;]"
+                    label="ASTROID_ARTICLE_TABS_VISIBILTY"
+                    multiple="true"
+                    description="ASTROID_ARTICLE_TABS_VISIBILTY_DESC">
+               <option value="article">ASTROID_ARTICLE_TAB_ARTICLE_TYPE_LABEL</option>
+               <option value="blog">ASTROID_ARTICLE_TAB_BLOG_LABEL</option>
+               <option value="article_layout">ASTROID_ARTICLE_TAB_WIDGETS_LABEL</option>
+               <option value="opengraph">ASTROID_ARTICLE_TAB_OPENGRAPH_LABEL</option>
+            </field>
+            <field showon="tabs_visibility:1" name="frontend_tabs_visibility" type="radio" default="1" label="ASTROID_TABS_FRONTEND_VISIBILTY" description="" class="btn-group btn-group-yesno">
+               <option value="1">ASTROID_VISIBLE</option>
+               <option value="0">ASTROID_HIDDEN</option>
+            </field>
+         </fieldset>
+      </fields>
+   </config>
+   <updateservers>
+      <server type="extension" priority="1" name="Astroid Framework">https://raw.githubusercontent.com/templaza/astroid-framework/refs/heads/updates/astroid_framework.xml</server>
+   </updateservers>
+</extension>
