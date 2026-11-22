@@ -15,7 +15,13 @@ ENV PORT=80
 # Site files (baked into the image so they survive restarts)
 COPY site/ /var/www/html/
 
-RUN chown -R www-data:www-data /var/www/html \
+# Guarantee the runtime directories Joomla must write to (cache, tmp, logs)
+# even if they are git-ignored or absent from the repository
+RUN mkdir -p /var/www/html/cache \
+             /var/www/html/tmp \
+             /var/www/html/administrator/logs \
+             /var/www/html/administrator/cache \
+ && chown -R www-data:www-data /var/www/html \
  && find /var/www/html -type d -exec chmod 755 {} \; \
  && find /var/www/html -type f -exec chmod 644 {} \;
 
