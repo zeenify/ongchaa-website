@@ -72,7 +72,7 @@ class AstroidlayoutdataField extends FormField {
                     $query = $db->getQuery(true);
                     $query->select($db->quoteName(array('template')));
                     $query->from($db->quoteName('#__template_styles'));
-                    $query->where($db->quoteName('home') . ' = 1');
+                    $query->where($db->quoteName('home') . ' = ' . $db->quote('1'));
                     $query->where($db->quoteName('client_id') . ' = 0');
                     $db->setQuery($query);
                     $article_layout->template = $db->loadResult();
