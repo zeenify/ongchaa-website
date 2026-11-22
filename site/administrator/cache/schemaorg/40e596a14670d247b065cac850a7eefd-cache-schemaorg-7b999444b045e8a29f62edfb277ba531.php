@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"result";a:5:{s:5:"@type";s:6:"Person";s:3:"@id";s:55:"http://localhost/ongchaa/#/schema/com_contact/contact/1";s:4:"name";s:30:"Ong-cha-A Cafe - General Tinio";s:7:"address";a:0:{}s:8:"isPartOf";a:1:{s:3:"@id";s:46:"http://localhost/ongchaa/#/schema/WebPage/base";}}s:6:"output";s:0:"";}
